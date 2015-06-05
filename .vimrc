@@ -1,0 +1,70 @@
+if !1 | finish | endif
+
+if has('vim_starting')
+    if &compatible
+     set nocompatible               " Be iMproved
+    endif
+
+    set runtimepath+=~/.vim/bundle/neobundle.vim/
+endif
+call neobundle#begin(expand('~/.vim/bundle/'))
+ NeoBundleFetch 'Shougo/neobundle.vim'
+ NeoBundle 'scrooloose/nerdtree'
+ NeoBundle 'Shougo/neocomplcache'
+ NeoBundle 'Shougo/neosnippet-snippets'
+ NeoBundle 'Shougo/unite.vim'
+ NeoBundle 'thinca/vim-quickrun'
+ NeoBundle 'davidoc/taskpaper.vim'
+ NeoBundle 'itchyny/lightline.vim'
+ NeoBundle 'altercation/vim-colors-solarized'
+ NeoBundle 'w0ng/vim-hybrid'
+call neobundle#end()
+filetype plugin indent on
+NeoBundleCheck
+
+""""""""""""""""""""""""""""""
+" 各種オプションの設定
+"""""""""""""""""""""""""""""""
+set tags=~/.tags
+"set noswapfile
+set ruler
+set cmdheight=2
+set laststatus=2
+set statusline=%<%f\%m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=%l,%c%V%8P
+set title
+set wildmenu
+set showcmd
+set backupdir=$HOME/.vimbackup
+set browsedir=buffer
+set smartcase
+set hlsearch
+set background=dark
+set expandtab
+set incsearch
+set listchars=tab:>\ ,extends:<
+set number
+set showmatch
+set autoindent
+set smartindent
+set tabstop=1
+set shiftwidth=1
+set smarttab
+set whichwrap=b,s,h,l,<,>,[,]
+set ignorecase
+set smartcase
+set backspace=indent,eol,start
+set cursorline
+nmap <silent> <Esc><Esc> :nohlsearch<CR>
+syntax on
+colorscheme hybrid
+highlight LineNr ctermfg=darkyellow
+
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+nnoremap <S-Left>  <C-w><<CR>
+nnoremap <S-Right> <C-w>><CR>
+nnoremap <S-Up>    <C-w>-<CR>
+nnoremap <S-Down>  <C-w>+<CR>
+autocmd VimEnter * execute 'NERDTree'
