@@ -13,7 +13,9 @@ call neobundle#begin(expand('~/.vim/bundle/'))
  NeoBundle 'Shougo/neocomplcache'
  NeoBundle 'Shougo/neosnippet-snippets'
  NeoBundle 'Shougo/unite.vim'
+ NeoBundle 'ujihisa/unite-colorscheme'
  NeoBundle 'thinca/vim-quickrun'
+ NeoBundle 'croaker/mustang-vim'
  NeoBundle 'davidoc/taskpaper.vim'
  NeoBundle 'itchyny/lightline.vim'
  NeoBundle 'altercation/vim-colors-solarized'
@@ -26,7 +28,7 @@ NeoBundleCheck
 " 各種オプションの設定
 """""""""""""""""""""""""""""""
 set tags=~/.tags
-"set noswapfile
+set noswapfile
 set ruler
 set cmdheight=2
 set laststatus=2
@@ -38,7 +40,6 @@ set backupdir=$HOME/.vimbackup
 set browsedir=buffer
 set smartcase
 set hlsearch
-set background=dark
 set expandtab
 set incsearch
 set listchars=tab:>\ ,extends:<
@@ -54,9 +55,12 @@ set ignorecase
 set smartcase
 set backspace=indent,eol,start
 set cursorline
+set nowritebackup
+set nobackup
+"set background=dark
 nmap <silent> <Esc><Esc> :nohlsearch<CR>
 syntax on
-colorscheme hybrid
+colorscheme evening
 highlight LineNr ctermfg=darkyellow
 
 nnoremap <C-h> <C-w>h
